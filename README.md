@@ -1,5 +1,5 @@
 # blazor-auto-custom-validation-attributes
-Herdando a classe ValidationAttribute para criar validações customizadas, uma maneira poderosa e flexível de adicionar regras de validação específicas para as suas necessidades no Front-end com Blazor
+Herdando a classe ValidationAttribute para criar validações customizadas, uma maneira poderosa e flexível de adicionar regras de validação específicas para as suas necessidades no Front-end com Blazor e C#
 
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
@@ -7,7 +7,7 @@ Herdando a classe ValidationAttribute para criar validações customizadas, uma 
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
 
 ## Sobre o projeto
-Este projeto mostra como herdar a classe <code>ValidationAttribute</code> para criar validações customizadas, uma maneira poderosa e flexível de adicionar regras de validação específicas para as suas necessidades no Front-end com Blazor.
+Este projeto mostra como herdar a classe <code>ValidationAttribute</code> para criar validações customizadas, uma maneira poderosa e flexível de adicionar regras de validação específicas para as suas necessidades no Front-end com Blazor e C#.
 
 O <code>ValidationAttribute</code> é uma classe base que herdamos para implementar nossas próprias validações. Ela nos oferece propriedades e métodos:
 
