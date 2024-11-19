@@ -1,0 +1,66 @@
+﻿@page "/required-if"
+@rendermode InteractiveServer
+@using blazor_auto_custom_validation_attributes.Models
+
+<PageTitle>RequiredIf</PageTitle>
+
+<h1>Custom Validation RequiredIf</h1>
+
+<EditForm Model="@Model" OnValidSubmit="@OnValidSubmitAsync" OnInvalidSubmit="@OnInvalidSubmitAsync">
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <InputText class="form-control" type="text" id="Nome" @bind-Value="Model.Nome"/>
+        <ValidationMessage For="@(() => Model.Nome)"/>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-check">
+            <InputCheckbox class="form-check-input" type="checkbox" id="ReceberNotificacao" @bind-Value="Model.ReceberNotificacao" @onclick="OnReceberNotificacaoClicked"/>
+            <label class="form-check-label" for="ReceberNotificacao">Receber Notificação</label>
+        </div>    
+    </div>
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">e-mail</label>
+        <InputText class="form-control" type="email" id="Email" @bind-Value="Model.Email"/>
+        <ValidationMessage For="@(() => Model.Email)"/>
+    </div>
+
+    <div class="mb-3">
+        @if(Success && !string.IsNullOrEmpty(Message))
+        {
+            <div class="alert alert-success" role="alert">@Message</div>
+        }
+        else if(!Success && !string.IsNullOrEmpty(Message))
+        {
+            <div class="alert alert-danger" role="alert">@Message</div>
+        }
+    </div>
+
+    <button class="btn btn-primary" type="submit">Registrar</button>
+</EditForm>
+
+@code {
+    private bool Success;
+    private string Message = string.Empty;
+    private Customer Model = new();
+
+    private async Task OnValidSubmitAsync()
+    {
+        Success = true;
+        Message = "Formulário válido!";
+        await Task.Delay(10);
+    }
+
+    private async Task OnInvalidSubmitAsync()
+    {
+        Success = false;
+        Message = "Formulário inválido!";
+        await Task.Delay(10);
+    }
+
+    private void OnReceberNotificacaoClicked() =>
+        Model.Email = string.Empty;
+}
